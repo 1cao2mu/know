@@ -3,6 +3,7 @@ import './App.css';
 import './css/flex.css';
 import { Button, Row, Col, Radio, Input } from "antd";
 const Search = Input.Search;
+let item1Timer;
 class App extends Component {
 
   state = {
@@ -16,19 +17,21 @@ class App extends Component {
       , { name: "成果交易" }
       , { name: "联系我们" }
       , { name: "登录" }],
-    mainList1: [{ name: "首页", isSelect: true }
-      , { name: "项目检索" }
-      , { name: "成果检索" }
-      , { name: "成果检索" }
+    mainList1: [{ name: "ABOUT</br>知耕科技服务平台", isSelect: true, content: "&nbsp&nbsp&nbsp&nbsp知耕科技服务平台是一个面向众人的科技服务平台，致力于为您提供关于科技项目的服务于检索。</br>&nbsp&nbsp&nbsp&nbsp我们能为您定制公平价格，为您提供快速的查询平台，鼓励创新，创造发展。" }
+      , { name: "奖励咨询", content: "		&nbsp&nbsp&nbsp&nbsp只有你想不到，没有我们做不到，为了鼓励科研创新精神我们制作了一系列的奖励资讯。</br>&nbsp&nbsp&nbsp&nbsp该资讯能激励你争创佳绩，你的努力，就是我们的动力。", isMove: false }
+      , { name: "成果交易", content: "&nbsp&nbsp&nbsp&nbsp还在为交易骗局而拒绝交易吗？还在为诚信而担忧吗?一次合作终身信赖，我们致力于诚信服务，信字贯穿我们的整个行业理念，相信我们的公平，诚信。您将受益匪浅。 				" }
+      , { name: "联系我们", content: "&nbsp&nbsp&nbsp&nbsp我们竭诚为您服务，帮您排忧解难，偶们的服务电话是0371-1234567</br>，服务邮箱是hnzg@163.com。欢迎您的来电。" }
     ],
-    mainList2: [{ name: "首页", isSelect: true }
-      , { name: "项目检索" }
-      , { name: "成果检索" }
-      , { name: "成果检索" }
+    mainList2: [{ name: "科技检索", content: "为您提供快捷检索，方便，简单，安全，效率是我们的理念。", isSelect: true }
+      , { name: "项目检索", content: "标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价", }
+      , { name: "科技评估", content: "科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估", }
+      , { name: "奖励咨询", content: "奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询", }
     ],
+  }
+  constructor(props) {
+    super(props);
 
   }
-
 
   render() {
     return (
@@ -87,90 +90,93 @@ class App extends Component {
 
 
 
-        <div className="main-j">
-          <div className="main-j-top am-flexbox-justify-center">
+
+        <div className="main-1">
+          <div className="main-1-top am-flexbox-justify-center">
             <img src={require("./img/PlatformProfile.png")} />
           </div>
 
-          <div className="main-j-footer am-flexbox-dir-row" style={{}}>
-            {this.state.mainList1.map((data, index) => (
-              <div key={index} className="main1item am-flexbox-dir-column" style={{ margin: 15 }}>
-                <img src={require('./img/reward.png')} />
-                <div style={{fontSize:24,marginTop:22,marginLeft:28}}>联系我们</div>
-                <div style={{fontSize:15,marginTop:22,marginLeft:28}}>我们竭诚为您服务，帮您排忧解难，偶们的服务电话是0371-1234567,服务邮箱是hnzg@163.com。欢迎您的来电。</div>
-                <div style={{fontSize:13,color:"#0d496e"}}>了解更多</div>
+          <div className="main-1-footer am-flexbox-dir-row">
+            {this.state.mainList1.map((data, index) => {
+              let bool = data.isMove || data.isSelect;
+              let className1 = bool ? "main1items" : '';
+              return <div key={index} className={`main1item am-flexbox-dir-column ${className1}`} onMouseEnter={() => this.onMouse1(index, true)} onMouseLeave={() => this.onMouse1(index, false)} onClick={() => this.onDown1(index)} >
+                <img src={require(`./img/1${index}.png`)} style={{ height: bool ? 0 : 90 }} />
+                <div dangerouslySetInnerHTML={{ __html: data.name }} style={{ fontSize: 24, paddingTop: 20, paddingLeft: 20, paddingRight: 10 }}></div>
+                <div dangerouslySetInnerHTML={{ __html: data.content }} style={{ fontSize: 15, paddingTop: 20, paddingLeft: 20, paddingRight: 10, height: bool ? 320 : 210 }}></div>
+                <div className='am-flexbox-align-end'>
+                  <div style={{ fontSize: 15, color: "#0d496e", textAlign: "end", width: 230 }}>了解更多</div>
+                </div>
               </div>
-            ))}
+            }
+            )}
           </div>
-
         </div>
-
 
         <div className="main-f">
           <div className="main-f-top am-flexbox-justify-center">
             <img src={require("./img/serve.png")} />
           </div>
-
           <div className="main-f-f">
             <ul className="item1">
-
-
-              <li style={{ marginLeft: 35 }}>
-                <img src={require("./img/1.png")} className="item1img" />
-                <div className="item1-div"></div>
-                <div className="div">
-                  <h3 className="item1-h3">科技检索</h3>
-                  <p>为您提供快捷检索，方便，简单，安全，效率是我们的理念。</p>
-                </div>
-              </li>
-
-
-              <li style={{ marginLeft: 35 }} >
-                <img src={require("./img/2.png")} className="item1img" />
-                <div className="item1-div"></div>
-                <div className="div">
-                  <h3 className="item1-h3">标准评价</h3>
-                  <p>标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价标准评价</p>
-                </div>
-              </li>
-
-              <li style={{ marginLeft: 35 }} >
-                <img src={require("./img/3.png")} className="item1img" />
-                <div className="item1-div"></div>
-                <div className="div">
-                  <h3 className="item1-h3">科技评估</h3>
-                  <p>科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估科技评估</p>
-                </div>
-              </li>
-              <li style={{ marginLeft: 35 }} >
-                <img src={require("./img/4.png")} className="item1img" />
-                <div className="item1-div"></div>
-                <div className="div">
-                  <h3 className="item1-h3">奖励咨询</h3>
-                  <p>奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询奖励咨询</p>
-                </div>
-              </li>
+              {this.state.mainList2.map((data, index) => (
+                <li key={index} onMouseEnter={() => this.onMouse2(index, true)} onMouseLeave={() => this.onMouse2(index, false)} style={{ marginLeft: index == 0 ? 0 : 35 }}>
+                  <img src={require(`./img/2${index}.png`)} width="265" height="370" />
+                  <div className="item1-div" style={{
+                    width: 265,
+                    height: data.isMove ? 370 : 50,
+                    top: data.isMove ? 0 : 320,
+                  }}></div>
+                  <div className="div" style={{
+                    width: 265,
+                    height: data.isMove ? 370 : 50,
+                    top: data.isMove ? 0 : 320,
+                  }} >
+                    <h3 className="item1-h3" style={{ color: "#fff" }}>{data.name}</h3>
+                    <p style={{ color: "#fff" }}>{data.content}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="footer">
           <div className="footer-top">
-            <div className="footer-a" >
-              <a href="#">首页</a> |
-			<a href="#">关于我们</a> |
-			<a href="#">联系我们</a> |
-			<a href="#">网站地图</a> |
-			<a href="#">产品与服务</a><br />
+            <div className="footer-a" style={{ color: "#fff" }} >
+              首页 | 关于我们 | 联系我们 | 网站地图 | 产品与服务<br />
               电话:0371-1234567  服务信箱:123456789.com<br />
               xxxxxxxxxxxxxxxxx Copyright 2018 NoiseChina.com Inc All Rights Reserved.
 			</div>
           </div>
         </div>
 
-      </div>
+      </div >
     );
   }
+
+
+  onMouse1(index, bool) {
+    let mainList1 = this.state.mainList1;
+    mainList1[index].isMove = bool;
+    this.setState(mainList1);
+  }
+
+  onMouse2(index, bool) {
+    let mainList2 = this.state.mainList2;
+    mainList2[index].isMove = bool;
+    this.setState(mainList2);
+  }
+  onDown1(index) {
+    let mainList1 = this.state.mainList1;
+    for (let i = 0; i < mainList1.length; i++) {
+      const element = mainList1[i];
+      element.isSelect = i == index;
+    }
+    this.setState(mainList1);
+  }
+
+
 }
 
 export default App;
