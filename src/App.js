@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="top">欢迎来到知耕科技服务平台！</div>
-        <Row type='flex' align='middle' >
+        <Row className="top2" type='flex' align='middle' >
           <Col span={10} offset={2}>
             <img src={require("./img/logo.png")} />
           </Col>
@@ -59,7 +59,6 @@ class App extends Component {
             ))}
           </ul>
         </div>
-
 
         <Row className="search" type='flex' align='middle' justify='center' >
 
@@ -87,9 +86,6 @@ class App extends Component {
             </div>
           </Col>
         </Row>
-
-
-
 
         <div className="main-1">
           <div className="main-1-top am-flexbox-justify-center">
