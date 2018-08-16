@@ -73,90 +73,32 @@ a{text-decoration:none;color:black;}
 	height:475px;
 	margin-top:20px;
 }
-
-.main-j a{color:#0d496e;}
-.main-j a:active{color:#0d496e;}
-.main-j a:hover{color:#0d496e;}
-.main-j-top{
-	width:1166px;
-	height:34px;
-	margin-left:auto;
-	margin-right:auto;
+.main1item{
+	width:20%;
+	height:475px;
 }
 .main-j-footer{
-	width:1166px;
-	height:412px;
-	margin-top:21px;
-	margin-left:auto;
-	margin-right:auto;
+	width: 100%;
+	height:370px;
+	margin: 0 5% 0 5%;
+	margin-left: 5%;
 }
-.ABOUT{
-	width:250px;
-	height:410px;
-	float:left;
-	box-shadow:#000000 0px 0px 5px 3px;
-}
-.ABOUT-t{
-	height:40px;
-	width:187px;
-	margin-top:39px;
-	margin-left:21px;
-	float:left;
-	font-size:20px;
-}
-.ABOUT-m{
-	width:195px;
-	height:184px;
-	margin-top:53px;
-	margin-left:37px;
-	float:left;
-	line-height:24px;
-	font-size:15px;
-}
-.ABOUT-f{
-	width:61px;
-	height:13px;
-	font-size:15px;
-	margin-top:58px;
-	margin-left:161px;
-	float:left
-}
-.reward{
-	width:250px;
-	height:365px;
-	margin-left:50px;
-	float:left;
-}
-.reward-t{
-	width:250px;
-	height:90px;
-	float:left;
-}
+
 .reward-m1{
-	width:117px;
-	height:20px;
 	font-size:24px;
 	margin-left:28px;
 	margin-top:22px;
-	float:left;
 }
 .reward-m2{
-	width:250px;
-	height:137px;
 	font-size:15px;
 	margin-top:32px;
-	float:left;
 	line-height:24px;
 }
 .reward-f{
-	width:64px;
 	height:13px;
 	margin-top:41px;
 	margin-left:181px;
-	float:left;
 }
-
-/*--end main-j --*/
 
 
 .main-f{
