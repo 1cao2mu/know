@@ -35,7 +35,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App am-flexbox-dir-column am-flexbox-align-center ">
         <div className="top">欢迎来到知耕科技服务平台！</div>
         <Row className="top2" type='flex' align='middle' >
           <Col span={10} offset={2}>
