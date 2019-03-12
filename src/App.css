@@ -23,7 +23,7 @@ div {
 }
 
 .top {
-	width: 1400px;
+	width: 1000px;
 	height: 40px;
 	background: #282828;
 	padding: 0px 5%;
@@ -33,10 +33,10 @@ div {
 }
 
 .top2 {
-	width: 1400px;
+	width: 1000px;
 }
 .nav {
-	width: 1400px;
+	width: 1000px;
 	height: 65px;
 }
 
@@ -74,7 +74,7 @@ div {
 }
 
 .search {
-	width: 1400px;
+	width: 1000px;
 	height: 355px;
 	background: no-repeat;
 	background-image: url(./img/banner.jpg);
@@ -90,7 +90,7 @@ div {
 }
 
 .main-1 {
-	width: 1400px;
+	width: 1000px;
 	height: 475px;
 	margin-top: 20px;
 }
@@ -136,7 +136,7 @@ div {
 }
 
 .main-f {
-	width: 1400px;
+	width: 1000px;
 	height: 515px;
 	background: #f2f2f2;
 	margin-top: 20px;
@@ -214,7 +214,7 @@ div {
 /*--end main-f --*/
 
 .footer {
-	width: 1400px;
+	width: 1000px;
 	height: 170px;
 	background: #2f2f2f;
 }
